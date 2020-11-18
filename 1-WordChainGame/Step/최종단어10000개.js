@@ -1,4 +1,3 @@
-
 const words10000 = [
     '뷰렛',   '트롤럽', '꼴꾼',   '트리튬', '그네툼', '시읏',   '크림슨', '컷스텝',
     '스텝',   '치경꾼', '질그릇', '에릭슨', '굿일꾼', '볼넷',   '스캘럽', '이븐',
@@ -1253,7 +1252,5 @@ const words10000 = [
 ];
 
 const filteredWords10000 = words10000.filter((word, index) => words10000.indexOf(word) === index);
-// console.log(filteredWords10000); // 717개
 
-module.exports = filteredWords10000;
-
+console.log(filteredWords10000); // 997개
