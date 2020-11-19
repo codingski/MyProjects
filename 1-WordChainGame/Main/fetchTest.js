@@ -3,7 +3,7 @@ var xml2js = require('xml2js');
 var parser = new xml2js.Parser();
 
 async function mean(str) {
-let encoded = encodeURI(`https://stdict.korean.go.kr/api/search.do?key=B9AD976BEF90C5480E6E59EAEE69E6FB&q=${str}&method=exact`);
+let encoded = encodeURI(`https://stdict.korean.go.kr/api/search.do?key=?=${str}&method=exact`);
 fetch(encoded)
   .then(function(response) {
     return response.text();
@@ -14,7 +14,4 @@ fetch(encoded)
   }));
 };
 
-let a = mean('감자')
-setTimeout(()=>{
-  console.log(a);
-}, 5000)
+

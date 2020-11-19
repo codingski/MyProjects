@@ -104,7 +104,7 @@ let counter = 0;
 
 
 // 시작
-while(counter < 100){
+while(counter < 10000){
     // 첫번째 단어 랜덤 선택
     let firstWord = randomItem(wordList);
     let player = 'Player 1';
@@ -505,7 +505,7 @@ while(counter < 100){
     console.log(counter);
 }
 console.log('\n--------------------------------');
-console.log('5000 vs 일반');
+console.log('5000 vs 10000');
 console.log(`Player 1: ${a} 번 승리
 Player 2: ${b} 번 승리`);
 console.log(`한판당 평균 사용 단어 개수: ${parseInt(average(countSum))}`);

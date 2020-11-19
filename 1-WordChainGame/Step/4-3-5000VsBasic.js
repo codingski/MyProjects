@@ -105,7 +105,7 @@ let counter = 0;
 // 시작
 while(counter < 10000){
     // 첫번째 단어 랜덤 선택
-    let firstWord = '시중꾼';
+    let firstWord = randomItem(wordList);
     let player = 'Player 1';
     console.log(player, firstWord);
     let count = 1;

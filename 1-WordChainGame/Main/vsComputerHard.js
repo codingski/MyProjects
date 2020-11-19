@@ -93,6 +93,7 @@ function average(array){
     return result/arrLength;
 }
 
+
 // 첫번째 글자 입력
 let firstWord;
 let player = 'Player 1';
@@ -102,7 +103,7 @@ let b = 0;
 let chance = 0;
 
 // 시작
-console.log('난이도: 쉬움');
+console.log('난이도: 어려움');
 while(1) {
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////// player 1
     player = 'Player 1';
@@ -147,6 +148,67 @@ while(1) {
 
     player = 'Player 2';
     if(player === 'Player 2'){
+        if(count > 2) {
+            // 32000한방단어 검열
+            // 초성 확인
+            initialLow = getConstantVowel(firstWord[firstWord.length - 1]);
+
+            // 32000 두음법칙 적용 안해도 한방단어가 있을때
+            if(filteredWords32000.some((word) => word[0] === firstWord[firstWord.length - 1])) {
+                secondWord = filteredWords32000.filter((word) => word[0] === firstWord[firstWord.length - 1])[0];
+                console.log(player, secondWord);
+                console.log('player 2 win!!');
+                b++;
+                break;
+            }
+
+            // 32000에 두음법칙 적용
+            // firstWord 의 맨 뒷글자가 'ㄴ'
+            if (initialLow.f === 'ㄴ') {
+                // 맨 뒷글자의 자음이 ㅕ ㅛ ㅠ ㅣ 중 하나일 경우
+                if (initialLow.s === 'ㅕ' || initialLow.s === 'ㅛ' || initialLow.s === 'ㅠ' || initialLow.s === 'ㅣ') {
+                    // ㄴ -> ㅇ 으로 바꿔준 뒤 다시한번 배열을 만들어준다
+                    firstWord = firstWord.replace(firstWord[firstWord.length - 1], String.fromCharCode(5292 + firstWord[firstWord.length - 1].charCodeAt()));
+                    if(filteredWords32000.some((word) => word[0] === firstWord[firstWord.length - 1])) {
+                        secondWord = filteredWords32000.filter((word) => word[0] === firstWord[firstWord.length - 1])[0];
+                        console.log(player, secondWord);
+                        console.log('player 2 win!!');
+                        b++;
+                        break;
+                    }        
+                } 
+            }
+
+            // 맨 뒷글자가 ㄹ일 경우
+            if (initialLow.f === 'ㄹ') {
+                // 맨 뒷글자의 자음이 ㅑ ㅕ ㅖ ㅛ ㅠ ㅣ 중 하나일 경우
+                if (initialLow.s === 'ㅑ' || initialLow.s === 'ㅕ' || initialLow.s === 'ㅖ' || initialLow.s === 'ㅛ' || initialLow.s === 'ㅠ' || initialLow.s === 'ㅣ') {
+                    // ㄹ -> ㅇ 으로 바꿔준 뒤 다시한번 배열을 만들어준다
+                    firstWord = firstWord.replace(firstWord[firstWord.length - 1], String.fromCharCode(3528 + firstWord[firstWord.length - 1].charCodeAt()));
+                    if(filteredWords32000.some((word) => word[0] === firstWord[firstWord.length - 1])) {
+                        secondWord = filteredWords32000.filter((word) => word[0] === firstWord[firstWord.length - 1])[0];
+                        console.log(player, secondWord);
+                        console.log('player 2 win!!');
+                        b++;
+                        break;
+                    }
+
+                // 맨 뒷글자의 자음이 ㅏ ㅐ ㅗ ㅚ ㅜ ㅡ 중 하나일 경우
+                } else if (initialLow.s === 'ㅏ' || initialLow.s === 'ㅐ' || initialLow.s === 'ㅗ' || initialLow.s === 'ㅚ' || initialLow.s === 'ㅜ' || initialLow.s === 'ㅡ'){
+                    // ㄹ -> ㅇ 으로 바꿔준 뒤 다시한번 배열을 만들어준다
+                    firstWord = firstWord.replace(firstWord[firstWord.length - 1], String.fromCharCode(3528 + firstWord[firstWord.length - 1].charCodeAt()));
+                    if(filteredWords32000.some((word) => word[0] === firstWord[firstWord.length - 1])) {
+                        secondWord = filteredWords32000.filter((word) => word[0] === firstWord[firstWord.length - 1])[0];
+                        console.log(player, secondWord);
+                        console.log('player 2 win!!');
+                        b++;
+                        break;
+                    }    
+                } 
+            }
+        }
+
+            // Player2 가 한방단어로 끝내지 못할 경우
         // filteredWords = firstword 다음 단어로 가능한 단어들의 배열;
         filteredWords = wordList.filter((word) => firstWord[firstWord.length -1] === word[0]);
         initialLow = getConstantVowel(firstWord[firstWord.length - 1]);
