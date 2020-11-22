@@ -117,10 +117,6 @@ while(1) {
     if(count > 1) {
         // Player 1;
 
-        // 한방단어에서 걸러지지 않았을 경우
-
-        
-
         // filteredWords = secondWord 다음 단어로 가능한 단어들의 배열;
         filteredWords = wordList.filter((word) => secondWord[secondWord.length -1] === word[0]);
         initialLow = getConstantVowel(secondWord[secondWord.length - 1]);
@@ -379,3 +375,6 @@ while(1) {
         }
     };
 };
+
+
+//

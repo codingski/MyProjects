@@ -106,7 +106,7 @@ let counter = 0;
 
 
 // 시작
-while(counter < 10000){
+while(counter < 5){
     // 첫번째 단어 랜덤 선택
     let firstWord = randomItem(wordList);
     let player = 'Player 1';
@@ -132,7 +132,7 @@ while(counter < 10000){
                     break;
                 } else {
                     firstWord = randomItem(filteredWords);
-                    console.log(player, firstWord);
+                    //console.log(player, firstWord);
                     count++;
                 }
             } 
@@ -155,12 +155,12 @@ while(counter < 10000){
                             break;
                         } else {
                             firstWord = randomItem(filteredWords);
-                            console.log(player, firstWord);
+                            //console.log(player, firstWord);
                             count++;
                         }
                     } else {
                         firstWord = randomItem(filteredWords);
-                        console.log(player, firstWord);
+                        //console.log(player, firstWord);
                         count++;
                     }         
                 } else { // 만약 ㄴ이고 ㅕ ㅛ ㅠ ㅣ 가 없으면
@@ -172,7 +172,7 @@ while(counter < 10000){
                         break;
                     } else {
                         firstWord = randomItem(filteredWords);
-                        console.log(player, firstWord);
+                        //console.log(player, firstWord);
                         count++;
                     }
                 }
@@ -195,12 +195,12 @@ while(counter < 10000){
                             break;
                         } else {
                             firstWord = randomItem(filteredWords);
-                            console.log(player, firstWord);
+                            //console.log(player, firstWord);
                             count++;
                         }
                     } else {
                         firstWord = randomItem(filteredWords);
-                        console.log(player, firstWord);
+                        //console.log(player, firstWord);
                         count++;
                     }
                 // 맨 뒷글자의 자음이 ㅏ ㅐ ㅗ ㅚ ㅜ ㅡ 중 하나일 경우
@@ -218,7 +218,7 @@ while(counter < 10000){
                             break;
                         } else {
                             firstWord = randomItem(filteredWords);
-                            console.log(player, firstWord);
+                            //console.log(player, firstWord);
                             count++;
                         }
                     } else {
@@ -243,7 +243,7 @@ while(counter < 10000){
                         break;
                     } else {
                         firstWord = randomItem(filteredWords);
-                        console.log(player, firstWord);
+                        //console.log(player, firstWord);
                         count++;
                     }
                 }
@@ -274,7 +274,7 @@ while(counter < 10000){
             // 맨 뒷글자가 'ㄴ' 과 'ㄹ' 이 아닌 경우
             if(initialLow.f !== 'ㄴ' && initialLow.f !== 'ㄹ'){
                 if(filteredWords.length === 0) {
-                    console.log(player);
+                    //console.log(player);
                     // 만약 다음단어를 말할 게 없으면 break;
                     a++;
                     gameOver(player, count);
@@ -282,7 +282,7 @@ while(counter < 10000){
                     break;
                 } else {
                     secondWord = randomItem(filteredWords);
-                    console.log(player, secondWord);
+                    //console.log(player, secondWord);
                     count++;
                 }
             } 
@@ -304,12 +304,12 @@ while(counter < 10000){
                             break;
                         } else {
                             secondWord = randomItem(filteredWords);
-                            console.log(player, secondWord);
+                            //console.log(player, secondWord);
                             count++;
                         }
                     } else {
                         secondWord = randomItem(filteredWords);
-                        console.log(player, secondWord);
+                        //console.log(player, secondWord);
                         count++;
                     }         
                 } else { // 만약 ㄴ이고 ㅕ ㅛ ㅠ ㅣ가 아닌경우
@@ -321,7 +321,7 @@ while(counter < 10000){
                         break;
                     } else {
                         secondWord = randomItem(filteredWords);
-                        console.log(player, secondWord);
+                        //console.log(player, secondWord);
                         count++;
                     }
                 }
@@ -344,12 +344,12 @@ while(counter < 10000){
                             break;
                         } else {
                             secondWord = randomItem(filteredWords);
-                            console.log(player, secondWord);
+                            //console.log(player, secondWord);
                             count++;
                         }
                     } else {
                         secondWord = randomItem(filteredWords);
-                        console.log(player, secondWord);
+                        //console.log(player, secondWord);
                         count++;
                     }
                 // 맨 뒷글자의 자음이 ㅏ ㅐ ㅗ ㅚ ㅜ ㅡ 중 하나일 경우
@@ -367,12 +367,12 @@ while(counter < 10000){
                             break;
                         } else {
                             secondWord = randomItem(filteredWords);
-                            console.log(player, secondWord);
+                            //console.log(player, secondWord);
                             count++;
                         }
                     } else {
                         secondWord = randomItem(filteredWords);
-                        console.log(player, secondWord);
+                        //console.log(player, secondWord);
                         count++;
                     }
                 } else {
@@ -384,7 +384,7 @@ while(counter < 10000){
                         break;
                     } else {
                         secondWord = randomItem(filteredWords);
-                        console.log(player, secondWord);
+                        //console.log(player, secondWord);
                         count++;
                     }
                 }
@@ -400,7 +400,7 @@ while(counter < 10000){
 
 console.dir(endWord, {'maxArrayLength': null});
 console.log('\n--------------------------------');
-console.log('끝말잇기 10000번 실행 결과');
+console.log('끝말잇기 실행 결과');
 console.log(`Player 1 은 ${a} 번 이겼습니다.
 Player 2 는 ${b} 번 이겼습니다.`);
 console.log(`count 의 평균 값은 ${parseInt(average(countSum))} 입니다.`);
